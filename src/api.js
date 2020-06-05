@@ -7,8 +7,8 @@ const api = axios.create({
 api.interceptors.request.use(config => {
     config.params = config.params || {};
     config.params['api_key'] = "79588a038f3a91810241f5cb17b24d0e";
-    config.params['language'] = "en-US";
-    //config.params['language'] = "kr-KO";
+    //config.params['language'] = "en-US";
+    config.params['language'] = "ko-KR";
     return config;
 })
 

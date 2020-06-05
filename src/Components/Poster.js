@@ -17,6 +17,7 @@ const Image = styled.div`
 `;
 
 const Rating = styled.span`
+  display: block;
   bottom: 5px;
   right: 5px;
   position: absolute;
@@ -39,7 +40,7 @@ const ImageContainer = styled.div`
 
 const Title = styled.span`
   display: block;
-  margin-bottom: 3px;
+  margin-top: 3px;
 `;
 
 const Year = styled.span`
@@ -53,16 +54,18 @@ const Poster = ({id, imageUrl, title, rating, year, isMovie = false}) => (
             <ImageContainer>
                 <Image bgUrl={imageUrl ? 
                     `https://image.tmdb.org/t/p/w300${imageUrl}` 
-                    : require("../assets/noPosterSmall.png")}></Image>
+                    : require("../assets/noPosterSmall.png")}>
+
+                </Image>
                 <Rating>
-                    <span role="img" aira-label="rating">
-                        ⭐️
-                    </span>{" "}
-                    {rating}/10
-                </Rating>
-                <Title>{title.length > 18 ? `${title.substring(0,18)}...` : title}</Title>
-                <Year>{year}</Year>
+                <span role="img" aira-label="rating">
+                    ⭐️
+                </span>{" "}
+                {rating}/10
+            </Rating>
             </ImageContainer>
+            <Title>{title.length > 18 ? `${title.substring(0,18)}...` : title}</Title>
+            <Year>{year}</Year>
         </Container>
     </Link>
     
