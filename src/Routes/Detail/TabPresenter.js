@@ -90,6 +90,11 @@ const CountryName = styled.span`
 const TextInfo = styled.p`
     font-size: 14px;
     text-align: center;
+    margin-bottom: 10px;
+`;
+
+const CollectionsContainer = styled.div`
+    
 `;
 
 const TabPresenter = ({result}) => (
@@ -103,6 +108,9 @@ const TabPresenter = ({result}) => (
             }
             <STab>Production</STab>
             <STab>Production Company</STab>
+            {result.belongs_to_collection
+            && <STab>Collections</STab>
+            }
         </STabList>
         {result.videos.results && result.videos.results.length > 0 &&
         <STabPanel current={"video"}>
@@ -111,8 +119,7 @@ const TabPresenter = ({result}) => (
             </VideoContainer>
         </STabPanel>
         }
-        <STabPanel>
-            
+        <STabPanel>  
             <ProductionContainer>
                 <TitleInfo>Production Companies</TitleInfo>
                 <CompaniesContainer>
@@ -160,9 +167,13 @@ const TabPresenter = ({result}) => (
                 <TextInfo>{company.name}</TextInfo>
             ) : "None"
             }
-            <ReactCountryFlag countryCode="US" />
         </STabPanel>
-        
+        {result.belongs_to_collection && result.belongs_to_collection.length > 0 &&
+        <STabPanel current={"collection"}>
+           <CollectionsContainer>
+           </CollectionsContainer> 
+        </STabPanel>
+        }
     </STabs>
 );
 
