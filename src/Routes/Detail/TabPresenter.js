@@ -93,10 +93,6 @@ const TextInfo = styled.p`
     margin-bottom: 10px;
 `;
 
-const CollectionsContainer = styled.div`
-    
-`;
-
 const TabPresenter = ({result}) => (
     <STabs
         selectedTabClassName='is-selected'

@@ -28,7 +28,7 @@ export default class extends React.Component {
         const { isCollection } = this.state;
         const parseId = parseInt(id);
         if(isNaN(parseId)){
-            //return push("/");
+            return push("/");
         }
         let result = null;
         try{
