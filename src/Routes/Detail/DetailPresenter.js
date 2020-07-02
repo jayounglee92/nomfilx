@@ -52,7 +52,27 @@ const Data = styled.div`
 const Title = styled.h3`
     font-size: 32px;
     margin-bottom: 20px;
+`;
 
+const CollectionLink = styled.a`
+    font-size: 13px;
+    width: 20px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.4);
+    color: while;
+    border: 5px;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        background-color: rgba(255,255,255,0.6);
+        color: black;
+    }
 `;
 
 const ItemContainer = styled.div`
@@ -67,7 +87,7 @@ const ImdbBtn = styled.a`
     all: unset;
     width: 20px;
     height: 10px;
-    background-color: rgb(245,197,24);
+    background-color: rgba(245,197,24,1);
     color: black;
     border: 5px;
     box-sizing: border-box;
@@ -118,6 +138,10 @@ const DetailPresenter = ({result, error, loading}) =>
                     {result.original_title 
                     ? result.original_title 
                     : result.original_name}
+                    {result.belongs_to_collection
+                    ? <CollectionLink href={`/collection/${result.belongs_to_collection.id}`}>See Series</CollectionLink>
+                    : ''                
+                    }
                 </Title>
                 <ItemContainer>
                     {result.release_date 

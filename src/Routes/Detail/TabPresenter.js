@@ -108,9 +108,6 @@ const TabPresenter = ({result}) => (
             }
             <STab>Production</STab>
             <STab>Production Company</STab>
-            {result.belongs_to_collection
-            && <STab>Collections</STab>
-            }
         </STabList>
         {result.videos.results && result.videos.results.length > 0 &&
         <STabPanel current={"video"}>
@@ -168,12 +165,6 @@ const TabPresenter = ({result}) => (
             ) : "None"
             }
         </STabPanel>
-        {result.belongs_to_collection && result.belongs_to_collection.length > 0 &&
-        <STabPanel current={"collection"}>
-           <CollectionsContainer>
-           </CollectionsContainer> 
-        </STabPanel>
-        }
     </STabs>
 );
 

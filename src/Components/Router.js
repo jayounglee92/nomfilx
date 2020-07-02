@@ -5,7 +5,7 @@ import TV from 'Routes/TV';
 import Search from 'Routes/Search';
 import Header from 'Components/Header';
 import Detail from 'Routes/Detail';
-import Collections from 'Routes/Collections';
+import Collection from 'Routes/Collection';
 
 export default () => (
     <Router>
@@ -17,7 +17,7 @@ export default () => (
             <Route path="/search" component={Search}/>
             <Route path="/movie/:id" component={Detail} />
             <Route path="/show/:id" component={Detail} />
-            <Route path="/collections/:id" component={Collections} />
+            <Route path="/collection/:id" component={Collection} />
             <Redirect from="*" to="/"/>
         </Switch> 
         </>
