@@ -1,15 +1,27 @@
 # Nomflix
 
 Learning React and ES6 by building a Movie Discovery App.
+리액트 공부를 위해 제작한 개인 프로젝트입니다.
 
-## Screens
+## Description
+- 주요기술 : React JS, styled-components
+- API : https://developers.themoviedb.org/3/getting-started/introduction
+- 툴 : VSCode
+- 형상관리 : GitHub
+- 작업기간 : 일주일 
+- 깃허브 배포 url : https://jayounglee92.github.io/nomfilx/
+- Netlify 배포 url : https://affectionate-einstein-2fb858.netlify.app/
+
+## 페이지 소개
+
+### Screens
 
 - [x] Home
 - [x] TV Shows
 - [x] Search
 - [x] Detail
 
-## API Verbs
+### API Verbs
 
 - [x] Now playing
 - [x] Top Rated (Movie)
@@ -20,10 +32,10 @@ Learning React and ES6 by building a Movie Discovery App.
 - [x] Movie Detail
 - [x] Search ( Movie, TV )
 
-## Code Challenges
+### Others
 
 - [x] IMDB Link
 - [x] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
 - [x] Collections Link
 - [x]  /collections Route
-- [ ]  On TV Show, show seasons and creators
+- [x]  On TV Show, show seasons and creators
