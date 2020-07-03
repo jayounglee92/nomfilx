@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import Loader from 'Components/Loader';
@@ -54,7 +55,7 @@ const Title = styled.h3`
     margin-bottom: 20px;
 `;
 
-const CollectionLink = styled.a`
+const CollectionLink = styled.span`
     font-size: 13px;
     width: 20px;
     height: 10px;
@@ -173,9 +174,10 @@ const DetailPresenter = ({result, error, loading}) =>
                     {result.belongs_to_collection ? 
                     <>
                     <Divider>•</Divider>
-                    <CollectionLink href={`/collection/${result.belongs_to_collection.id}`}>See Series</CollectionLink>
-                    </>
-                    : ''                
+                    <Link to={`/collection/${result.belongs_to_collection.id}`}>
+                        <CollectionLink>See Series</CollectionLink>
+                    </Link>    
+                    </> : ''          
                     }
                 </ItemContainer>
                 <Overview>
