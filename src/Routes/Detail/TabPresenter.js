@@ -7,6 +7,7 @@ import ReactCountryFlag from "react-country-flag";
 const STabs = styled(Tabs)`
     width: 50%;
     margin-top:20px;
+    max-height: 70vh;
 `;
 
 const STabList = styled(TabList)`
@@ -23,7 +24,7 @@ const STab = styled(Tab)`
     transition: border-bottom 0.1s linear;
     box-sizing: border-box;
     font-size: 16px;
-
+    
     &.is-selected {
     background-color: rgba(255,255,255,0.4);
     border-bottom: 2px solid white;
@@ -39,7 +40,8 @@ const STabPanel = styled(TabPanel)`
     display: none;
     padding: 20px 10px;
     background-color: rgba(255,255,255,0.4);
-
+    overflow-y: auto;
+    max-height: 67vh;
     &.is-selected {
         display: block;
     }
@@ -93,6 +95,30 @@ const TextInfo = styled.p`
     margin-bottom: 10px;
 `;
 
+const GridContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 125px);
+    grid-gap: 25px;
+`;
+
+const Item = styled.div`
+    text-align: center;
+`;
+
+const ItemImg = styled.div`
+    height: 180px;
+    background-image: url(${props => props.bgUrl});
+    background-size: cover;
+    background-position: center center;
+`;
+
+const ItemName = styled.p`
+    margin-bottom: 2px;
+    margin-top: 10px;
+`;
+
+const ItemDate = styled.p``;
+
 const TabPresenter = ({result}) => (
     <STabs
         selectedTabClassName='is-selected'
@@ -104,6 +130,12 @@ const TabPresenter = ({result}) => (
             }
             <STab>Production</STab>
             <STab>Production Company</STab>
+            {result.created_by && result.created_by.length > 0 
+            && <STab>Created by</STab>
+            }
+            {result.seasons && result.seasons.length > 0 
+            && <STab>Seasons</STab>
+            }
         </STabList>
         {result.videos.results && result.videos.results.length > 0 &&
         <STabPanel current={"video"}>
@@ -161,6 +193,37 @@ const TabPresenter = ({result}) => (
             ) : "None"
             }
         </STabPanel>
+        {result.created_by && result.created_by.length > 0 &&
+        <STabPanel current={"created_by"}>
+            <GridContainer>
+                {
+                    result.created_by.map(profile => 
+                    <Item>
+                        <ItemImg bgUrl={profile.profile_path ? 
+                        `https://image.tmdb.org/t/p/w300${profile.profile_path}`
+                        : require("../../assets/noPosterSmall.png")}/>
+                        <ItemName>{profile.name}</ItemName>
+                    </Item>)
+                }
+            </GridContainer>
+        </STabPanel>
+        }
+        {result.seasons && result.seasons.length > 0 &&
+        <STabPanel current={"seasons"}>
+            <GridContainer>
+                {
+                    result.seasons.map(season => 
+                    <Item>
+                        <ItemImg bgUrl={season.poster_path ? 
+                        `https://image.tmdb.org/t/p/w300${season.poster_path}`
+                        : require("../../assets/noPosterSmall.png")}/>
+                        <ItemName>{result.name} {season.name}</ItemName>
+                        <ItemDate>{season.air_date}</ItemDate>
+                    </Item>)
+                }
+            </GridContainer>
+        </STabPanel>
+        }
     </STabs>
 );
 

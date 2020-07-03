@@ -58,20 +58,16 @@ const CollectionLink = styled.a`
     font-size: 13px;
     width: 20px;
     height: 10px;
-    background-color: rgba(255,255,255,0.4);
-    color: while;
+    background-color: rgba(0, 51, 204,0.5);
+    color: black;
     border: 5px;
     box-sizing: border-box;
     padding: 2px 5px;
-    font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
-    vertical-align: middle;
     transition: 0.2s ease-in-out;
     &:hover{
-        background-color: rgba(255,255,255,0.6);
-        color: black;
+        background-color: rgba(0, 51, 204,1);
     }
 `;
 
@@ -87,7 +83,7 @@ const ImdbBtn = styled.a`
     all: unset;
     width: 20px;
     height: 10px;
-    background-color: rgba(245,197,24,1);
+    background-color: rgba(245,197,24,0.8);
     color: black;
     border: 5px;
     box-sizing: border-box;
@@ -95,6 +91,10 @@ const ImdbBtn = styled.a`
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        background-color: rgba(245,197,24,1);
+    }
 `;
 
 const Divider = styled.span`
@@ -135,13 +135,10 @@ const DetailPresenter = ({result, error, loading}) =>
             />
             <Data>
                 <Title>
+                    {result.title ? result.title: ''}<br/> 
                     {result.original_title 
-                    ? result.original_title 
-                    : result.original_name}
-                    {result.belongs_to_collection
-                    ? <CollectionLink href={`/collection/${result.belongs_to_collection.id}`}>See Series</CollectionLink>
-                    : ''                
-                    }
+                    ? (result.original_title === result.title ? '' : result.original_title ) 
+                    : (result.original_name === result.title ? '' : result.original_name )}
                 </Title>
                 <ItemContainer>
                     {result.release_date 
@@ -172,6 +169,13 @@ const DetailPresenter = ({result, error, loading}) =>
                             </Item>
                         </>
                     )
+                    }
+                    {result.belongs_to_collection ? 
+                    <>
+                    <Divider>•</Divider>
+                    <CollectionLink href={`/collection/${result.belongs_to_collection.id}`}>See Series</CollectionLink>
+                    </>
+                    : ''                
                     }
                 </ItemContainer>
                 <Overview>
