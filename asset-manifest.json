@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/nomfilx/static/js/main.96f2f003.chunk.js",
+    "main.js.map": "/nomfilx/static/js/main.96f2f003.chunk.js.map",
+    "runtime-main.js": "/nomfilx/static/js/runtime-main.ed754cb6.js",
+    "runtime-main.js.map": "/nomfilx/static/js/runtime-main.ed754cb6.js.map",
+    "static/js/2.9fd0613b.chunk.js": "/nomfilx/static/js/2.9fd0613b.chunk.js",
+    "static/js/2.9fd0613b.chunk.js.map": "/nomfilx/static/js/2.9fd0613b.chunk.js.map",
+    "index.html": "/nomfilx/index.html",
+    "precache-manifest.f6ead5dda4a6c0da0fcd1fefdd908a70.js": "/nomfilx/precache-manifest.f6ead5dda4a6c0da0fcd1fefdd908a70.js",
+    "service-worker.js": "/nomfilx/service-worker.js",
+    "static/js/2.9fd0613b.chunk.js.LICENSE.txt": "/nomfilx/static/js/2.9fd0613b.chunk.js.LICENSE.txt",
+    "static/media/loadingBgSmall.gif": "/nomfilx/static/media/loadingBgSmall.d0ed0a5c.gif",
+    "static/media/noPosterSmall.png": "/nomfilx/static/media/noPosterSmall.87a0eb6a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed754cb6.js",
+    "static/js/2.9fd0613b.chunk.js",
+    "static/js/main.96f2f003.chunk.js"
+  ]
+}
