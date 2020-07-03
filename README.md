@@ -10,7 +10,7 @@ Learning React and ES6 by building a Movie Discovery App.
 - 형상관리 : GitHub
 - 작업기간 : 일주일 
 - 깃허브 배포 url : https://jayounglee92.github.io/nomfilx/
-- Netlify 배포 url : https://affectionate-einstein-2fb858.netlify.app/
+- Netlify 배포 url : https://trusting-panini-82f02c.netlify.app/
 
 ## 페이지 소개
 
