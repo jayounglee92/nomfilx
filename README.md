@@ -1,4 +1,4 @@
-# Nomflix
+# Movie Discovery App - Nomflix
 
 > Learning React and ES6 by building a Movie Discovery App.
 ![Showing UI](/_info-img/info-nomflix-01.gif)
